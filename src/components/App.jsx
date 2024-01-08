@@ -59,9 +59,12 @@ class App extends Component {
 
     return (
       <div className={css.AppWrapper}>
+        <div className={css.PhoneWrapper}>
         <h2 className={css.AppTitle}>Phonebook</h2>
-        <ContactForm handleAddContact={this.handleAddContact} />
-        <h2>Contacts</h2>
+          <ContactForm handleAddContact={this.handleAddContact} />
+        </div>
+        
+        <h2 className={css.AppTitle}>Contacts</h2>
         <Filter state={this.state} handleFindChange={this.handleFindChange} />
         <ContactList
           state={filteredContactList}

@@ -1,3 +1,4 @@
+import css from "./ContactForm.module.css"
 
 export const ContactForm = ({ handleAddContact }) => {
   const handleSubmit = e => {
@@ -30,10 +31,10 @@ export const ContactForm = ({ handleAddContact }) => {
     /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/.test(number);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div >
+      <form className={css.FormContainer} onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
-        <input
+        <input className={css.Input}
           type="text"
           placeholder="Contact name"
           name="name"
@@ -42,7 +43,7 @@ export const ContactForm = ({ handleAddContact }) => {
         />
 
         <label htmlFor="number">Number</label>
-        <input
+        <input className={css.Input}
           type="tel"
           placeholder="Phone number"
           name="number"
@@ -50,7 +51,7 @@ export const ContactForm = ({ handleAddContact }) => {
           required
         />
 
-        <button type="submit">Add contact</button>
+        <button className={css.SubmitButton} type="submit">Add contact</button>
       </form>
     </div>
   );

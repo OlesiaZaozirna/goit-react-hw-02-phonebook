@@ -10,14 +10,23 @@
   height: '100vh';
   justify-content: 'center';
   align-items: 'center';
-  font-size: 40;
+  font-size: 30;
   width: 500px;
-  margin: 50px auto;
+  margin: 20px auto;
   box-shadow: -2px 12px 12px -5px rgba(7, 7, 38, 1);
   -webkit-box-shadow: -2px 12px 12px -5px rgba(7, 7, 38, 1);
   -moz-box-shadow: -2px 12px 12px -5px rgba(7, 7, 38, 1);
+  border: rgba(7, 7, 38, 1) 2 2px solid;
+  border-radius: 5px;
 }
 .AppTitle {
   text-align: center;
   color: #42449c;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.PhoneWrapper {
+  display: flex;
+  flex-direction: column;
 }

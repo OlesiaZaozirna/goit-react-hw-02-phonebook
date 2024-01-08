@@ -1,12 +1,12 @@
-
+import css from "./ContactList.module.css"
 
 export const ContactList = ({ handleDeleteContact, state }) => {
   return (
-    <ul>
+    <ul className={css.ContactListContainer}>
       {state.map(({ id, name, number }) => (
-        <li key={id}>
+          <li className={css.ContactListItem} key={id}>
           {name}: {number}
-          <button onClick={() => handleDeleteContact(id)}>Delete</button>
+          <button className={css.Delete} onClick={() => handleDeleteContact(id)}>Delete</button>
         </li>
       ))}
     </ul>
