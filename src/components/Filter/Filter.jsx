@@ -11,6 +11,12 @@ export const Filter = ({ handleFindChange, state: { filter } }) => {
 
     handleFindChange(e);
   };
+  const handleBackspace = e => {
+    if (e.key === 'Backspace' && filter.length > 0) {
+      const updatedFilter = filter.slice(0, -1);
+      handleFindChange({ target: { value: updatedFilter } });
+    }
+  };
 
   const validateName = name => /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/.test(name);
 
@@ -24,6 +30,7 @@ export const Filter = ({ handleFindChange, state: { filter } }) => {
         id="filter"
         value={filter}
         onChange={handleChange}
+        onKeyDown={handleBackspace}
       />
     </div>
   );

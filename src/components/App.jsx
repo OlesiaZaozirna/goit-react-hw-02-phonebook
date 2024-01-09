@@ -4,7 +4,7 @@ import css from "./App.module.css"
 
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
-import { ContactForm } from './ContactForm/ContactForm.jsx';
+import ContactForm  from './ContactForm/ContactForm.jsx';
 
 
 class App extends Component {
@@ -64,12 +64,14 @@ class App extends Component {
           <ContactForm handleAddContact={this.handleAddContact} />
         </div>
         
+        <div className={css.ContactsWrapper}>
         <h2 className={css.AppTitle}>Contacts</h2>
         <Filter state={this.state} handleFindChange={this.handleFindChange} />
         <ContactList
           state={filteredContactList}
           handleDeleteContact={this.handleDeleteContact}
-        />
+          />
+          </div>
       </div>
     );
   }
